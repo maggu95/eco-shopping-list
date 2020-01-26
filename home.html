@@ -26,10 +26,14 @@
       <input type="text" class="form-control" placeholder="Grocery item">
     </div>
   </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+
+	
+</script>
 
 <script>
   // Your web app's Firebase configuration
@@ -45,8 +49,19 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
   console.log(firebase);
+
+  //Opretter tabell inni databasen
+  var database =  firebase.database(); 
+  var ref = database.ref('score');
+
+  //Starter prosessen hvor data legges inn i tabell
+  var data = {
+  	navn: "Kunde"
+  	score: "Melk"
+  }
+  ref.push(data);
+
 </script>
 
 
