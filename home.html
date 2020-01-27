@@ -13,24 +13,27 @@
 
 <body>
 
-<h1> A more  convienient way to remember your groceries</h1>
-<h2>While also preventing unnecessary use of paper!</h2>
+<h1> Enn mer miljøvennlig måte å huske hva du skal handle!</h1>
+<h2>Mens du  også sparer papir!</h2>
 <p>Under construction...</p>	
 	
-<form>
+<form id="skjema">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Grocery List name">
+      <input id="listenavn" type="text" class="form-control" placeholder="Grocery List name">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Grocery item">
+      <input id="produkt" type="text" class="form-control" placeholder="Grocery item">
     </div>
   </div>
   <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<button onclick="sendData()" type="submit" class="btn btn-primary">Submit</button>
 
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+
 
 	
 </script>
@@ -52,15 +55,24 @@
   console.log(firebase);
 
   //Opretter tabell inni databasen
-  var database =  firebase.database(); 
-  var ref = database.ref('score');
+  var refMessage =  firebase.database().ref('kunder'); 
+
 
   //Starter prosessen hvor data legges inn i tabell
+  function sendData(){
+  var listenavn = document.getElementById("listenavn").value;
+  var produkt = document.getElementById("produkt").value;   
+
+
+  console.log(listenavn.value); 
+  console.log(produkt.value); 
+
   var data = {
-  	navn: "Kunde"
-  	score: "Melk"
+  	Liste_Navn: listenavn,
+  	Liste: produkt
   }
-  ref.push(data);
+  refMessage.push(data);
+}
 
 </script>
 
