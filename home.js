@@ -2,8 +2,7 @@
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyDGHo7zjEWtuUIMSAUGPL0OWKYPZEy200Y",
- 50"
+    apiKey:
   };
   // Initialize Firebase
 
