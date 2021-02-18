@@ -3,13 +3,7 @@
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDGHo7zjEWtuUIMSAUGPL0OWKYPZEy200Y",
-    authDomain: "eco-friendly-shopping-list.firebaseapp.com",
-    databaseURL: "https://eco-friendly-shopping-list.firebaseio.com",
-    projectId: "eco-friendly-shopping-list",
-    storageBucket: "eco-friendly-shopping-list.appspot.com",
-    messagingSenderId: "627921587136",
-    appId: "1:627921587136:web:79a48c7a95b1b8e477d625",
-    measurementId: "G-NXSSFV5E50"
+ 50"
   };
   // Initialize Firebase
 
